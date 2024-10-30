@@ -2,7 +2,7 @@ const example = {
   name: "Jon Snow",
   phone: "123456789",
   email: "jon@snow.com",
-  address: "Winterfell",
+  location: "Winterfell",
   experiences: [
     {
       company: "Night's Watch",
