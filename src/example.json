@@ -1,0 +1,44 @@
+{
+  "name": "Jon Snow",
+  "phone": "123456789",
+  "email": "jon@snow.com",
+  "address": "Winterfell",
+  "skills": [
+    {
+      "name": "JavaScript",
+      "level": "advanced"
+    },
+    {
+      "name": "React",
+      "level": "advanced"
+    },
+    {
+      "name": "Node.js",
+      "level": "advanced"
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Night's Watch",
+      "position": "Commander",
+      "startDate": "2011-01-01",
+      "endDate": "2015-01-01",
+      "summary": "Defend the realm from the White Walkers"
+    },
+    {
+      "company": "Winterfell",
+      "position": "King in the North",
+      "startDate": "2015-01-01",
+      "endDate": "2019-01-01",
+      "summary": "Defend the North from the White Walkers"
+    }
+  ],
+  "education": [
+    {
+      "institution": "Winterfell University",
+      "degree": "Bachelor",
+      "startDate": "2001-01-01",
+      "endDate": "2005-01-01"
+    }
+  ]
+}
