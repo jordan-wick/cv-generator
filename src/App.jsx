@@ -17,8 +17,8 @@ function App() {
     const newExperience = {
       company: '',
       position: '',
-      startDate: new Date(),
-      endDate: new Date(),
+      startDate: null,
+      endDate: null,
       summary: '',
       id: crypto.randomUUID(),
     }
@@ -29,8 +29,7 @@ function App() {
     const newEducation = {
       institution: '',
       degree: '',
-      startDate: new Date(),
-      endDate: new Date(),
+      graduation: null,
       id: crypto.randomUUID(),
     }
     setResume({...resume, education: [...resume.education, newEducation]})
@@ -57,7 +56,12 @@ function App() {
               <li key={index}>
                 <h3>{experience.company}</h3>
                 <p>{experience.position}</p>
-                <p>{format(addMonths(new Date(experience.startDate), 1), 'MMMM yyyy')} - {experience.endDate ? format(addMonths(new Date(experience.endDate), 1), 'MMMM yyyy') : 'Present'}</p>
+                {experience.startDate && (
+                  <p>
+                    {format(addMonths(new Date(experience.startDate), 1), 'MMMM yyyy')} - 
+                    {experience.endDate ? format(addMonths(new Date(experience.endDate), 1), 'MMMM yyyy') : 'Present'}
+                  </p>
+                )}
                 <p>{experience.summary}</p>
               </li>
             ))}
@@ -70,7 +74,9 @@ function App() {
               <li key={index}>
                 <h3>{education.institution}</h3>
                 <p>{education.degree}</p>
-                <p>{format(addMonths(new Date(education.graduation), 1), 'MMMM yyyy')}</p>
+                {education.graduation && (
+                  <p>{format(addMonths(new Date(education.graduation), 1), 'MMMM yyyy')}</p>
+                )}
               </li>
             ))}
           </ul>

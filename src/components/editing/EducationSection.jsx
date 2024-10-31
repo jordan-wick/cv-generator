@@ -56,7 +56,7 @@ export default function EducationSection({ setResume, onAdd, onRemove }) {
     } else {
       return (
         <li key={index}>
-          <h3>{education.school}/{education.degree}</h3>
+          <h3>{education.institution} | {education.degree}</h3>
           <button onClick={() => expandEducation(index)}>Expand</button>
         </li>
       )

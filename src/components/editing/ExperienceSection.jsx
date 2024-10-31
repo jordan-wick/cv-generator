@@ -70,7 +70,7 @@ export default function ExperienceSection({ setResume, onAdd, onRemove }) {
     } else {
       return (
         <li key={index}>
-          <h3>{experience.company}/{experience.position}</h3>
+          <h3>{experience.company} | {experience.position}</h3>
           <button onClick={() => expandExperience(index)}>Expand</button>
         </li>
       )
