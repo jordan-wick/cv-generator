@@ -27,8 +27,7 @@ const example = {
     {
       institution: "Winterfell University",
       degree: "Bachelor of Combat",
-      startDate: new Date(2001, 7),
-      endDate: new Date(2005, 4),
+      graduation: new Date(2005, 4),
       id: crypto.randomUUID(),
       expanded: false,
     }

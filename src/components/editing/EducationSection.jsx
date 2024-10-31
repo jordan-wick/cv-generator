@@ -43,17 +43,10 @@ export default function EducationSection({ setResume, onAdd, onRemove }) {
             onChange={handleEducationChange}
           />
           <Input
-            label="Start Date"
+            label="Graduation/Expected Graduation Date"
             type="month"
-            name="startDate"
+            name="graduation"
             value={format(addMonths(education.startDate, 1), 'yyyy-MM')}
-            onChange={handleEducationChange}
-          />
-          <Input
-            label="End Date"
-            type="month"
-            name="endDate"
-            value={format(addMonths(education.endDate, 1), 'yyyy-MM')}
             onChange={handleEducationChange}
           />
           <button onClick={() => onRemove(index)}>Remove Education</button>

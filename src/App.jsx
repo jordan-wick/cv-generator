@@ -70,7 +70,7 @@ function App() {
               <li key={index}>
                 <h3>{education.institution}</h3>
                 <p>{education.degree}</p>
-                <p>{format(addMonths(new Date(education.startDate), 1), 'MMMM yyyy')} - {education.endDate ? format(addMonths(new Date(education.endDate), 1), 'MMMM yyyy') : 'Present'}</p>
+                <p>{format(addMonths(new Date(education.graduation), 1), 'MMMM yyyy')}</p>
               </li>
             ))}
           </ul>
