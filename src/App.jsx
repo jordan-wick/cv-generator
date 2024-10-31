@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import example from './example.jsx'
-import { format } from 'date-fns'
+import { format, set } from 'date-fns'
 import './App.css'
 import PersonalForm from './components/editing/PersonalForm.jsx'
 import ExperiencesSection from './components/editing/ExperienceSection.jsx'
@@ -11,11 +11,6 @@ function App() {
   function handlePersonalInfoChange(e) {
     setResume({ ...resume, [e.target.name]: e.target.value });
   }
-
-  // function handleExperienceChange(e, index) {
-  //   const newExperiences = {...resume.experiences};
-  //   newExperiences = {...newExperiences, [index]: }
-  // }
 
   function addExperience() {
     const newExperience = {
@@ -33,7 +28,7 @@ function App() {
     <div className="app">
       <div className="editing">
         <PersonalForm resume={resume} onChange={handlePersonalInfoChange} />
-        <ExperiencesSection onAdd={addExperience}/>
+        <ExperiencesSection onAdd={addExperience} setResume={setResume}/>
       </div>
       <div className="resume">
         <div className="resume-header">
