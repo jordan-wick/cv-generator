@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import example from './example.jsx'
-import { format, set } from 'date-fns'
+import { format, addMonths } from 'date-fns'
 import './App.css'
 import PersonalForm from './components/editing/PersonalForm.jsx'
 import ExperiencesSection from './components/editing/ExperienceSection.jsx'
+import EducationSection from './components/editing/EducationSection.jsx'
 
 function App() {
   const [resume, setResume] = useState(example);
@@ -24,11 +25,23 @@ function App() {
     setResume({...resume, experiences: [...resume.experiences, newExperience]})
   }
 
+  function addEducation() {
+    const newEducation = {
+      institution: '',
+      degree: '',
+      startDate: new Date(),
+      endDate: new Date(),
+      id: crypto.randomUUID(),
+    }
+    setResume({...resume, education: [...resume.education, newEducation]})
+  }
+
   return (
     <div className="app">
       <div className="editing">
         <PersonalForm resume={resume} onChange={handlePersonalInfoChange} />
         <ExperiencesSection onAdd={addExperience} setResume={setResume}/>
+        <EducationSection onAdd={addEducation} setResume={setResume}/>
       </div>
       <div className="resume">
         <div className="resume-header">
@@ -44,7 +57,7 @@ function App() {
               <li key={index}>
                 <h3>{experience.company}</h3>
                 <p>{experience.position}</p>
-                <p>{format(new Date(experience.startDate), 'MMMM yyyy')} - {experience.endDate ? format(new Date(experience.endDate), 'MMMM yyyy') : 'Present'}</p>
+                <p>{format(addMonths(new Date(experience.startDate), 1), 'MMMM yyyy')} - {experience.endDate ? format(addMonths(new Date(experience.endDate), 1), 'MMMM yyyy') : 'Present'}</p>
                 <p>{experience.summary}</p>
               </li>
             ))}
@@ -57,7 +70,7 @@ function App() {
               <li key={index}>
                 <h3>{education.institution}</h3>
                 <p>{education.degree}</p>
-                <p>{format(new Date(education.startDate), 'MMMM yyyy')} - {education.endDate ? format(new Date(education.endDate), 'MMMM yyyy') : 'Present'}</p>
+                <p>{format(addMonths(new Date(education.startDate), 1), 'MMMM yyyy')} - {education.endDate ? format(addMonths(new Date(education.endDate), 1), 'MMMM yyyy') : 'Present'}</p>
               </li>
             ))}
           </ul>
