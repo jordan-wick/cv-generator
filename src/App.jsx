@@ -3,6 +3,7 @@ import example from './example.jsx'
 import { format } from 'date-fns'
 import './App.css'
 import PersonalForm from './components/editing/PersonalForm.jsx'
+import ExperiencesSection from './components/editing/ExperienceSection.jsx'
 
 function App() {
   const [resume, setResume] = useState(example);
@@ -11,14 +12,28 @@ function App() {
     setResume({ ...resume, [e.target.name]: e.target.value });
   }
 
+  // function handleExperienceChange(e, index) {
+  //   const newExperiences = {...resume.experiences};
+  //   newExperiences = {...newExperiences, [index]: }
+  // }
+
+  function addExperience() {
+    const newExperience = {
+      company: '',
+      position: '',
+      startDate: new Date(),
+      endDate: new Date(),
+      summary: '',
+      id: crypto.randomUUID(),
+    }
+    setResume({...resume, experiences: [...resume.experiences, newExperience]})
+  }
+
   return (
     <div className="app">
       <div className="editing">
         <PersonalForm resume={resume} onChange={handlePersonalInfoChange} />
-        <div className="experience-form">
-          <h2>Experiences</h2>
-          {/* TODO */}
-        </div>
+        <ExperiencesSection onAdd={addExperience}/>
       </div>
       <div className="resume">
         <div className="resume-header">
