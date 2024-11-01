@@ -37,9 +37,10 @@ function App() {
     const newExperience = {
       company: '',
       position: '',
-      startDate: null,
-      endDate: null,
+      startDate: Date.now('yyyy-MM'),
+      endDate: Date.now('yyyy-MM'),
       summary: '',
+      expanded: true,
       id: crypto.randomUUID(),
     }
     setResume({...resume, experiences: [...resume.experiences, newExperience]})
@@ -73,7 +74,8 @@ function App() {
     const newEducation = {
       institution: '',
       degree: '',
-      graduation: null,
+      graduation: Date.now('yyyy-MM'),
+      expanded: true,
       id: crypto.randomUUID(),
     }
     setResume({...resume, education: [...resume.education, newEducation]})
