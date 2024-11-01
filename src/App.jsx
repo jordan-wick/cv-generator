@@ -58,6 +58,17 @@ function App() {
     }));
   }
 
+  function handleEducationChange(e) {
+    const { name, value } = e.target;
+    const index = parseInt(e.target.closest('li').dataset.key, 10);
+    setResume(prevState => ({
+      ...prevState,
+      education: prevState.education.map((edu, ind) => 
+        ind === index ? { ...edu, [name]: value } : edu
+      )
+    }));
+  }
+
   function addEducation() {
     const newEducation = {
       institution: '',
@@ -66,6 +77,19 @@ function App() {
       id: crypto.randomUUID(),
     }
     setResume({...resume, education: [...resume.education, newEducation]})
+  }
+
+  function removeEducation(index) {
+    setResume({...resume, education: resume.education.filter((edu, ind) => ind !== index)})
+  }
+
+  function expandEducation(index) {
+    setResume(prevState => ({
+      ...prevState,
+      education: prevState.education.map((edu, ind) => 
+        ind === index ? { ...edu, expanded: !edu.expanded } : edu
+      )
+    }));
   }
 
   return (
@@ -79,7 +103,13 @@ function App() {
           onRemove={removeExperience}
           onExpand={expandExperience}
         />
-        <EducationSection onAdd={addEducation} setResume={setResume}/>
+        <EducationSection 
+          educations={resume.education}
+          onChange={handleEducationChange}
+          onAdd={addEducation} 
+          onRemove={removeEducation}
+          onExpand={expandEducation}
+        />
       </div>
       <Resume resume={resume} />
     </div>
