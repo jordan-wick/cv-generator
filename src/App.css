@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2vw;
   text-align: center;
 }
 
@@ -39,4 +39,78 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Additions past template */
+
+.app {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 2vw;
+}
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 8.5 / 11;
+  background-color: white;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 3em;
+}
+
+.resume > * {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.resume-header {
+  align-items: center;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid black;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  font-size: 12pt;
+}
+
+.resume-header h1 {
+  margin: 0;
+  font-size: 24pt;
+}
+
+.resume h2 {
+  margin: 0;
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.resume h3 {
+  margin: 0;
+  font-size: 12pt;
+}
+
+.italicized {
+  font-style: italic;
+}
+
+.resume ul {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.bullets li {
+  list-style: disc inside;
+}
+
+li {
+  list-style: none;
 }

@@ -23,6 +23,13 @@ export default function EducationSection({ educations, onChange, onAdd, onRemove
             onChange={onChange}
           />
           <Input
+            label="Location"
+            type="text"
+            name="location"
+            value={education.location}
+            onChange={onChange}
+          />
+          <Input
             label="Graduation/Expected Graduation Date"
             type="month"
             name="graduation"

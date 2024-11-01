@@ -23,6 +23,13 @@ export default function ExperienceSection({ experiences, onChange, onAdd, onRemo
             onChange={onChange}
           />
           <Input
+            label="Location"
+            type="text"
+            name="location"
+            value={experience.location}
+            onChange={onChange}
+          />
+          <Input
             label="Start Date"
             type="month"
             name="startDate"
