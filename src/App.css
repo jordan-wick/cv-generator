@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=keyboard_arrow_down');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,49 +7,13 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* Additions past template */
-
 .app {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  grid-gap: 2vw;
+  grid-template-columns: 4fr 7fr;
+  grid-gap: 4vw;
 }
+
+/* Resume Section */
 
 .resume {
   display: flex;
@@ -56,7 +22,7 @@
   background-color: white;
   color: black;
   font-family: 'Times New Roman', Times, serif;
-  padding: 3em;
+  padding: 10%;
   line-height: normal;
 }
 
@@ -96,7 +62,7 @@ p {
 
 .resume-header h1 {
   margin: 0;
-  font-size: 24pt;
+  font-size: 36pt;
 }
 
 .header-details {
@@ -114,6 +80,7 @@ p {
   margin: 0;
   font-size: 12pt;
 }
+
 
 .italicized {
   font-style: italic;
@@ -153,4 +120,100 @@ li {
 
 .right-aligned {
   text-align: right;
+}
+
+
+/* Editing Section */
+
+
+.editing {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.editing h2 {
+  margin: 0;
+  font-size: 2.5vh;
+}
+
+.personal-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.personal-form > *:nth-child(even) {
+  text-align: left;
+}
+
+.personal-form > *:nth-child(odd) {
+  margin-bottom: 1vh;
+}
+
+.editing ul {
+  padding: 0;
+  margin: 0;
+}
+
+.experiences-section {
+  margin: 2vh 0;
+}
+
+
+.expanded-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapsed-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+input, textarea {
+  font-size: 1.5vh;
+  border-radius: 1.5vh;
+  border: none;
+  padding: 1vh;
+  background-color: rgb(54, 54, 54);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+
+.remove-btn {
+  color: rgb(171, 0, 0);
+  background-color: var(--background-color);
+  border: 2px solid rgb(171, 0, 0);
+}
+
+.material-symbols-outlined {
+  will-change: transform;
+  font-variation-settings: 
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.expand {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+}
+
+.expand:focus, .expand:focus-visible {
+  outline: none;
+}
+
+.expand:hover{
+  border: none;
+  transition: transform 250ms;
+  transform: scale(1.3);
 }

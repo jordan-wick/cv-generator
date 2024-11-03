@@ -4,7 +4,7 @@ export default function Input({ label, type, name, value, onChange }) {
       <>
         <label>{label}</label>
         <textarea 
-          type={type} 
+          rows={5}
           name={name} 
           value={value} 
           onChange={onChange} 

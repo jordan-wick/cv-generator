@@ -7,7 +7,7 @@ export default function ExperienceSection({ experiences, onChange, onAdd, onRemo
     const index = experiences.indexOf(experience);
     if (experience.expanded) {
       return (
-        <li key={index} data-key={index}>
+        <li key={index} data-key={index} className="expanded-section">
           <Input
             label="Company"
             type="text"
@@ -50,15 +50,19 @@ export default function ExperienceSection({ experiences, onChange, onAdd, onRemo
             value={experience.summary}
             onChange={onChange}
           />
-          <button onClick={() => onRemove(index)}>Remove Experience</button>
-          <button onClick={() => onExpand(index)}>Collapse</button>
+          <div className="buttons">
+            <button onClick={() => onRemove(index)} className="remove-btn">Delete</button>
+            <button onClick={() => onExpand(index)}>Save</button>
+          </div>
         </li>
       )
     } else {
       return (
-        <li key={index}>
+        <li key={index} className="collapsed-section">
           <h3>{experience.company} | {experience.position}</h3>
-          <button onClick={() => onExpand(index)}>Expand</button>
+          <button onClick={() => onExpand(index)} className="expand">
+            <span className="material-symbols-outlined">keyboard_arrow_down</span>
+          </button>
         </li>
       )
     }

@@ -7,7 +7,7 @@ export default function EducationSection({ educations, onChange, onAdd, onRemove
     const index = educations.indexOf(education);
     if (education.expanded) {
       return (
-        <li key={index} data-key={index}>
+        <li key={index} data-key={index} className="expanded-section">
           <Input
             label="Institution"
             type="text"
@@ -36,15 +36,19 @@ export default function EducationSection({ educations, onChange, onAdd, onRemove
             value={format(addMonths(education.graduation, 1), 'yyyy-MM')}
             onChange={onChange}
           />
-          <button onClick={() => onRemove(index)}>Remove Education</button>
-          <button onClick={() => onExpand(index)}>Collapse</button>
+          <div className="buttons">
+            <button className="remove-btn" onClick={() => onRemove(index)}>Delete</button>
+            <button onClick={() => onExpand(index)}>Save</button>
+          </div>
         </li>
       )
     } else {
       return (
-        <li key={index}>
+        <li key={index} className="collapsed-section">
           <h3>{education.institution} | {education.degree}</h3>
-          <button onClick={() => onExpand(index)}>Expand</button>
+          <button className="expand" onClick={() => onExpand(index)}>
+            <span className="material-symbols-outlined">keyboard_arrow_down</span>
+          </button>
         </li>
       )
     }

@@ -3,6 +3,7 @@ import Input from "../Input";
 export default function PersonalForm({ resume, onChange }) {
   return (
     <div className="personal-form">
+      <h2>Personal Details</h2>
       <Input
         label="Name"
         type="text"
