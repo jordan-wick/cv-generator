@@ -1,29 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=keyboard_arrow_down');
 
+@media print {
+  .editing {
+    display: none;
+  }
+  .resume {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
+
+@page {
+  size: letter;
+  /* margin: 1in; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2vw;
   text-align: center;
+  width: 100%;
+  height: fit-content;
 }
 
 .app {
   display: grid;
-  grid-template-columns: 4fr 7fr;
+  grid-template-columns: 1fr 3fr;
   grid-gap: 4vw;
+  width: 100%;
+  height: 100vh;
 }
 
 /* Resume Section */
 
 .resume {
-  display: flex;
-  flex-direction: column;
   aspect-ratio: 8.5 / 11;
   background-color: white;
   color: black;
   font-family: 'Times New Roman', Times, serif;
-  padding: 10%;
+  padding: 36pt;
+  max-height: 11in;
   line-height: normal;
+  margin: 2vw;
 }
 
 .resume > * {
@@ -132,11 +159,18 @@ li {
   height: 100vh;
   overflow-y: auto;
   scrollbar-width: none;
+  min-width: 400px;
+  margin: 2vw;
 }
 
 .editing h2 {
   margin: 0;
   font-size: 2.5vh;
+  text-align-last: left;
+}
+
+.editing h3 {
+  font-weight: normal;
 }
 
 .personal-form {
@@ -145,11 +179,11 @@ li {
   width: 100%;
 }
 
-.personal-form > *:nth-child(even) {
+.personal-form > *:nth-child(even), .expanded-section > *:nth-child(odd) {
   text-align: left;
 }
 
-.personal-form > *:nth-child(odd) {
+.personal-form > *:nth-child(odd), .expanded-section > *:nth-child(even) {
   margin-bottom: 1vh;
 }
 
@@ -162,7 +196,6 @@ li {
   margin: 2vh 0;
 }
 
-
 .expanded-section {
   display: flex;
   flex-direction: column;
@@ -171,10 +204,11 @@ li {
 .collapsed-section {
   display: flex;
   justify-content: space-between;
+  text-align: left;
 }
 
 input, textarea {
-  font-size: 1.5vh;
+  /* font-size: 1.5vh; */
   border-radius: 1.5vh;
   border: none;
   padding: 1vh;
@@ -194,26 +228,33 @@ input, textarea {
 }
 
 .material-symbols-outlined {
-  will-change: transform;
   font-variation-settings: 
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
-  'opsz' 48
+  'opsz' 48;
+  transition: transform 250ms;
+  transform-origin: center;
+}
+
+.expand-container {
+  position: relative;
+  width: 20%;
 }
 
 .expand {
   background-color: var(--background-color);
   display: flex;
   align-items: center;
-}
-
-.expand:focus, .expand:focus-visible {
-  outline: none;
-}
-
-.expand:hover{
-  border: none;
   transition: transform 250ms;
+  transform-origin: center;
+  will-change: transform;
+  position: absolute;
+  right: 0;
+  top: 25%;
+  border: none;
+}
+
+.expand:hover .material-symbols-outlined {
   transform: scale(1.3);
 }

@@ -60,9 +60,11 @@ export default function ExperienceSection({ experiences, onChange, onAdd, onRemo
       return (
         <li key={index} className="collapsed-section">
           <h3>{experience.company} | {experience.position}</h3>
-          <button onClick={() => onExpand(index)} className="expand">
-            <span className="material-symbols-outlined">keyboard_arrow_down</span>
-          </button>
+          <div className="expand-container">
+            <button onClick={() => onExpand(index)} className="expand">
+              <span className="material-symbols-outlined">keyboard_arrow_down</span>
+            </button>
+          </div>
         </li>
       )
     }

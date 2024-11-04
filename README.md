@@ -1,8 +1,16 @@
-# React + Vite
+# CV Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Preview](jordan-wick.github.io/cv-generator)
 
-Currently, two official plugins are available:
+## Description
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+First react project, showcasing learning in the use of components and states.
+
+## Improvement Opportunities
+
+- More animations
+- Minor UI changes in font decisions, colors, etc.
+- Save & cancel buttons instead of just save
+- Maintaining the aspect ration and sizing of the resume
+- Adding print features to the resume to ensure it is the only thing in the print preview
+  - It seems that the availability of features for making this work are limited in most browsers.

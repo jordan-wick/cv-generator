@@ -46,9 +46,11 @@ export default function EducationSection({ educations, onChange, onAdd, onRemove
       return (
         <li key={index} className="collapsed-section">
           <h3>{education.institution} | {education.degree}</h3>
-          <button className="expand" onClick={() => onExpand(index)}>
-            <span className="material-symbols-outlined">keyboard_arrow_down</span>
-          </button>
+          <div className="expand-container">
+            <button className="expand" onClick={() => onExpand(index)}>
+              <span className="material-symbols-outlined">keyboard_arrow_down</span>
+            </button>
+          </div>
         </li>
       )
     }
